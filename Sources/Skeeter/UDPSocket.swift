@@ -27,7 +27,7 @@ class UDPSocket {
 	
 	init(timeout: Int = 10) throws {
 		
-		socket = Glibc.socket(AF_INET, Int32(SOCK_DGRAM), 0)
+		socket = Glibc.socket(AF_INET, Int32(SOCK_DGRAM.rawValue), 0)
 		if socket < 0 {
 			throw SocketError.allocateError
 		}
